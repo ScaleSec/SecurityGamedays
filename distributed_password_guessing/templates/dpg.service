@@ -1,0 +1,12 @@
+[Unit]
+Description=Distributed Password Guessing Scenario
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+ExecStart=/opt/dpg
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
