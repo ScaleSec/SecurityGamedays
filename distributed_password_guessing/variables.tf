@@ -15,13 +15,13 @@ variable "desired_capacity" {
   default = 3
 }
 
+variable "target" {
+  description = "The HTTP/S endpoint to submit the login request to"
+}
+
 variable "password_file" {
   description = "URL of text file to download with a list of passwords"
   default = "https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt"
-}
-
-variable "target" {
-  description = "The HTTP/S endpoint to submit the login request to"
 }
 
 variable "username_field" {

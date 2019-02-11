@@ -15,16 +15,18 @@ curl -X POST -H 'Content-Type: application/json' \
 * Determine how well the IR/SOC team is able to find these type of errors
 * Can help determine how susceptible you are to DDoS attacks
 
+**WARNING**: Only use this terraform module within the context of a valid and well-communicated test scenario. Using this code can lead to a DDoS which is illegal. ScaleSec is not responsible for misuse of the code herein.
+
 ## Running
 
 1. Install [terraform](https://terraform.io/downloads.html)
 2. Make any necessary changes to the script or variables to suite your test case
 3. Get your SSH public key ready as well as the endpoint you'll be using since Terraform will prompt you for these things
 4. Run `terraform apply` from this directory
-6. Execute your Gameday exercises
+5. Execute your Gameday exercises
   a. To obtain the IP addresses of the nodes you just created, you can run `./bin/instance_ips.sh`
   b. You can then verify the `dpg` executable is running by SSHing onto one of the nodes and running `sudo systemctl status dpg`
-7. Clean up: `terraform destroy`
+6. Clean up: `terraform destroy`
 
 ## Inputs
 

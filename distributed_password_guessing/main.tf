@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 data "template_file" "dpg" {
-  template = "${file("templates/dpg.sh")}"
+  template = "${file("${path.module}/templates/dpg.sh")}"
   vars = {
     password_file = "${var.password_file}"
     target = "${var.target}"
@@ -18,11 +18,11 @@ data "template_file" "dpg" {
 }
 
 data "template_file" "service" {
-  template = "${file("templates/dpg.service")}"
+  template = "${file("${path.module}/templates/dpg.service")}"
 }
 
 data "template_file" "init" {
-  template = "${file("templates/user-data.sh")}"
+  template = "${file("${path.module}/templates/user-data.sh")}"
   vars = {
     password_file = "${var.password_file}"
     dpg_script_rendered = "${data.template_file.dpg.rendered}"
